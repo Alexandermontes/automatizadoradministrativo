@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatizador Administrativo</title>
+    <style>
+     
+     #main{
+         margin-top: 70px;
+     }
+     #navbar{
+         display: flex;
+         justify-content:flex-end;  /*PARA ALINEAR A LA IZQUIERDA*/
+         position: fixed; /*PARA FIJAR LA BARRA*/
+         top:0;          /*PARA QUE NO HAYAN ESPACIOS EN LA BARRA*/
+         width: 100%;
+         height: 70px;
+         background-color:black;
+
+        }
+        #grupo-lista{
+            display: flex;     /*PARA NO USAR FLOAT*/
+            justify-content:flex-end;  /*PARA ALINEAR A LA IZQUIERDA*/
+            padding-right: 70px;
+            list-style: none;
+        }
+        
+        .texto{
+            display: block;
+            background-color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            padding: 10px;
+            text-decoration: none;
+            margin-left: 40px;
+            color: white;
+        }
+        .texto:hover{
+            background-color: grey;
+        }
+        #sublista3{
+            list-style: none;
+            display: none;  /*PARA OCULTAR SUBMENU*/
+            position: absolute; 
+                      
+        }
+        .subitem3{
+            margin-top: 10px;
+        }
+        .subtexto3{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            background-color: black;
+            text-decoration:none;
+            color: white;
+            padding: 5px;
+        }
+        .texto:hover + #sublista3 , #sublista3:hover{     /*PARA LLEGAR AL SUBMENU*/
+            display: block;          /*PARA MOSTRAR EL SUBMENU*/
+        }
+        .subtexto3:hover{
+            background-color: grey;
+        }
+        #nombre{
+            padding-left: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            color: white;
+        }
+        #logo{
+            padding: 10px;
+            width: 130px;
+        }
+        #welcome-section{
+
+                width:70%;
+                align-self: center;
+                margin: auto;
+                height:100vh; /* TENER EN CUENTA PARA EL TAMAÑO DEL SECTION*/
+                
+            } 
+        
+        footer{
+            
+            margin: auto;
+            width:60% ;
+            height: auto;
+            position: static;
+            color: #444;
+            background-color: lightgray;
+            
+        }
+        #diagrama{
+            width: 100%;
+            height: 80%;
+            position:inherit;
+        }
+
+
+        @media screen and (max-width: 700px) {
+
+            #navbar{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                background-color:black;
+                margin-left: 5px;
+            }
+            #welcome-section{
+                object-position:top;
+                height: auto;
+            }
+
+
+            #grupo-lista{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+            }
+            #logo{
+                width: 400px;
+                height:150px;
+            }
+            .texto:hover + #sublista3 , #sublista3:hover{     /*PARA LLEGAR AL SUBMENU*/
+            display: none;          /*SE OCULTA EN REDUCIDO*/
+        }
+        } 
+    </style>
+</head>
+<body>
+    <main id = 'main'>
+        <header id = 'header'>
+            <nav id = navbar>
+                <img src="/img/LOGOTIPO.jpg" alt="" id="logo">
+               <h1 id="nombre">Automatizador Administrativo</h1>
+                <ul id="grupo-lista">
+                    <li class="item"><a href="index.html#welcome-section" class="texto">Welcome</a></li>
+                    <li class="item"><a href="index.html#projects" class="texto">Proyectos</a></li>
+                    <li class="item"><a href="https://www.freecodecamp.org/espanol/oswaldmontes" target="_blank" class="texto">Camp</a></li>
+                    <li class="item"><a href="#" class="texto">Servicios</a>
+                        <ul id="sublista3">
+                            <li class="subitem3"><a href="documentacion.html" class="subtexto3">Documentacion</a></li>
+                            <li class="subitem3"><a href="analisis.html" class="subtexto3">Analisis</a></li>
+                            <li class="subitem3"><a href="desarrollo.html" class="subtexto3">Desarrollo</a></li>
+                            <li class="subitem3"><a href="soporte.html" class="subtexto3">Soporte</a></li>
+                        </ul>                    
+                    </li>
+                    <li class="item"><a href="#" class="texto">Contacto</a>
+                </ul>
+            </nav>
+        </header>
+        <section id="welcome-section">
+            <div id="titulacion">
+                <h1 id='titulo'>ANALISIS</h1>
+            </div>
+            <div id="diagrama"> 
+                <img src="img/cifras_pc.jpg" alt=""  id="diagrama">
+            </div>
+            <div id="contenido">
+                <p>Toda tarea tiene un tiempo y un costo, el poder identificar los desperdicios como esperas, acumulaciones, retrabajos junto las mejores estrategias y metodologias para darle solucion permite aumentar la productividad y reducir los costos </p>
+            </div>
+
+        </section>
+        
+        <footer>
+            <h3>CONTACTENOS</h3>
+        <ul>
+            <li>telefono = +57 3014625372</li>
+            <li>correo = alexanderabella@gmail.com</li>
+            <li>ciudad = Bogotá D.C.</li>
+        </ul>
+        </footer>
+
+    </main>
+</body>
+</html>

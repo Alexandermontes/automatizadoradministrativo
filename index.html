@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatizador Administrativo</title>
+    <style>
+     
+     #main{
+         margin-top: 70px;
+     }
+     #navbar{
+         display: flex;
+         justify-content:flex-end;  /*PARA ALINEAR A LA IZQUIERDA*/
+         position: fixed; /*PARA FIJAR LA BARRA*/
+         top:0;          /*PARA QUE NO HAYAN ESPACIOS EN LA BARRA*/
+         width: 100%;
+         height: 70px;
+         background-color:black;
+
+        }
+        #grupo-lista{
+            display: flex;     /*PARA NO USAR FLOAT*/
+            justify-content:flex-end;  /*PARA ALINEAR A LA IZQUIERDA*/
+            padding-right: 70px;
+            list-style: none;
+        }
+        
+        .texto{
+            display: block;
+            background-color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            padding: 10px;
+            text-decoration: none;
+            margin-left: 50px;
+            color: white;
+        }
+        .texto:hover{
+            background-color: grey;
+        }
+        #sublista3{
+            list-style: none;
+            display: none;  /*PARA OCULTAR SUBMENU*/
+            position: absolute; 
+                      
+        }
+        .subitem3{
+            margin-top: 10px;
+        }
+        .subtexto3{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            background-color: black;
+            text-decoration:none;
+            color: white;
+            padding: 5px;
+        }
+        .texto:hover + #sublista3 , #sublista3:hover{     /*PARA LLEGAR AL SUBMENU*/
+            display: block;          /*PARA MOSTRAR EL SUBMENU*/
+        }
+        .subtexto3:hover{
+            background-color: grey;
+        }
+        #nombre{
+            padding-left: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            color: white;
+        }
+        #logo{
+            padding: 10px;
+            width: 130px;
+        }
+        #welcome-section{
+
+                width:70%;
+                align-self: center;
+                margin: auto;
+                height:100vh; /* TENER EN CUENTA PARA EL TAMAÑO DEL SECTION*/
+            }
+        
+        #titulacion{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color:blue;
+            text-align: center;
+            margin-left: auto;
+        }
+        #contenido{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 15px;
+                text-align: justify;
+                
+            } 
+
+        #servicio{
+                display: none;  
+        }
+        #projects{
+                width:70%;
+                align-self: center;
+                padding-top: 60px;
+                margin: auto;
+                height:auto; 
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr ;
+                grid-template-rows: 1fr 1fr;
+                grid-gap: 10px;
+                justify-items: center;    
+            }
+            
+        .proy{
+            margin: 1px;
+            padding-left: 40px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .proy h3{
+            width: 100;
+            height: auto;
+            background-color: black;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            color: white;
+            padding-left: 3px;
+            }
+        footer{
+            margin: auto;
+            width:60% ;
+            height: auto;
+            position: static;
+            color: #444;
+            background-color: lightgray;
+        }
+        #diagrama{
+            width: 100%;
+            height: 80%;
+            position:inherit;
+        }
+
+
+        @media screen and (max-width: 700px) {
+            #main{
+             margin-top: 0px;
+                 
+            }
+
+            #navbar{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+                background-color:black;
+                align-self:center;
+                margin-left: auto;
+            }
+            #welcome-section{
+                object-position:top;
+                height: auto;
+            }
+            #grupo-lista{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: auto;
+            }
+            #contenido{
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 15px;
+                text-align: justify;
+                
+            }
+            #servicio{
+                display:block ;
+                width:70%;
+                align-self: center;
+                margin: auto;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-size: 20px;
+                }
+            #servicio li a{
+                text-decoration: none;
+                color: white;
+            }
+
+
+            #projects{  
+                width:70%;
+                align-self: center;
+                padding-top: 60px;
+                margin: auto;
+                height:auto; /* TENER EN CUENTA PARA EL TAMAÑO DEL SECTION*/
+                display: flex;
+                flex-direction: column;   
+            }
+            #sublista4{
+                list-style: none;
+                background-color: black;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                }
+            .subitem4{
+                margin-top: 10px;
+                }
+            .subtexto4:hover{
+                background-color: grey;
+                }
+            #logo{
+                width: 80%;
+                height:150px;
+            }
+            .texto:hover + #sublista3 , #sublista3:hover{     /*PARA LLEGAR AL SUBMENU*/
+            display: none;          /*SE OCULTA EN REDUCIDO*/
+        }
+        } 
+    </style>
+</head>
+<body>
+    <main id = 'main'>
+        <header id = 'header'>
+            <nav id = navbar>
+                <img src="/img/LOGOTIPO.jpg" alt="" id="logo">
+               <h1 id="nombre">Automatizador Administrativo</h1>
+                <ul id="grupo-lista">
+                    <li class="item"><a href="index.html#welcome-section" class="texto">Welcome</a></li>
+                    <li class="item"><a href="index.html#projects" class="texto">Proyectos</a></li>
+                    <li class="item"><a href="https://www.freecodecamp.org/espanol/oswaldmontes" target="_blank" class="texto">Camp</a></li>
+                    <li class="item"><a href="#servicio" class="texto">Servicios</a>
+                        <ul id="sublista3">
+                            <li class="subitem3"><a href="documentacion.html" class="subtexto3">Documentacion</a></li>
+                            <li class="subitem3"><a href="analisis.html" class="subtexto3">Analisis</a></li>
+                            <li class="subitem3"><a href="desarrollo.html" class="subtexto3">Desarrollo</a></li>
+                            <li class="subitem3"><a href="soporte.html" class="subtexto3">Soporte</a></li>
+                        </ul>                    
+                    </li>
+                    <li class="item"><a href="#" class="texto">Contacto</a>
+                </ul>
+            </nav>
+        </header>
+        <section id="welcome-section">
+            <div id="titulacion">
+                <h1 >SOFTWARE PARA OPTIMIZAR RECURSOS</h1>
+            </div>
+            <div id="diagrama"> 
+                <img src="img/transcripcion.jpg" alt=""  id="diagrama">
+            </div>
+            <div id="contenido">
+                <p>Las acciones sin planeacion que se realizan en el dia a dia de cada tarea en la empresa, van acumulando malas practicas que generan desperdicio de recursos y mal uso de los activos. En la era de la transformación digital, implementar software para controlar, resolver y evitar el mal uso de los recursos es actualmente la mejor herramienta para la gestion de los procesos,    </p>
+            </div>
+        </section>
+        <section id="projects">
+            <!--<article id="project-tile">-->
+                <div class="proy">
+                    <h3>APP DE REGISTRO</h3>
+                    <ul>
+                        <li>App android </li>
+                        <li>Automatizador de procesos</li>
+                        <li>Reduccion de costos</li>
+                        <li> <a href="https://automatizadoradministrativo.blogspot.com" target="_blank">visitar proyecto</a>  </li>
+                    </ul>
+                </div>
+                <div class="proy">
+                    <h3>TIENDA ONLINE </h3>
+                    <ul>
+                        <li>google pages</li>
+                        <li>pagos por paypal</li>
+                        <li>sin uso de codigo</li>
+                        <li><a href="https://sites.google.com/site/emprendimientodesdeelbarrio/feria-de-emprendimiento/tienda-virtual" target="_blank">visita el proyecto</a></li>
+                    </ul>
+                </div>
+                <div class="proy">
+                    <h3>WEB TRIBUTO</h3>
+                    <ul>
+                        <li>Pagina simple </li>
+                        <li>html y CSS basico</li>
+                        <li>publicacion de informacion</li>
+                        <li> <a href="https://alexandermontes.github.io/pagina-tigre/" target="_blank">visitar proyecto</a>  </li>
+                    </ul>
+                </div>
+                <div class="proy">
+                    <h3>FORM EJEMPLO</h3>
+                    <ul>
+                        <li>Ejemplo de formulario </li>
+                        <li>html y CSS basico</li>
+                        <li>configuracion de campos</li>
+                        <li> <a href="https://alexandermontes.github.io/encuestaform/" target="_blank">visitar proyecto</a>  </li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <section id="servicio">
+            <h1 id='titulo'>servicios</h1>
+            <ul id="sublista4">
+                <li class="subitem4"><a href="documentacion.html" class="subtexto4">Documentacion</a></li>
+                <li class="subitem4"><a href="analisis.html" class="subtexto4">Analisis</a></li>
+                <li class="subitem4"><a href="desarrollo.html" class="subtexto4">Desarrollo</a></li>
+                <li class="subitem4"><a href="soporte.html" class="subtexto4">Soporte</a></li>
+            </ul>
+        </section>
+        <footer>
+            <h3>CONTACTENOS</h3>
+        <ul>
+            <li>Telefono = +57 3157576675</li>
+            <li>Correo = alexanderabella@gmail.com</li>
+            <li>Ciudad = Bogotá D.C.</li>
+        </ul>
+        </footer>
+
+    </main>
+</body>
+</html>
